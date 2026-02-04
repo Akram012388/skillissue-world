@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
-import { LoadingSkeleton } from '@/components';
+import { InstallCommand, LoadingSkeleton } from '@/components';
 import { HomeContent } from '@/components/HomeContent';
 
 export default function Home(): ReactNode {
@@ -39,10 +39,7 @@ export default function Home(): ReactNode {
               <p className="text-xs font-mono uppercase text-foreground-muted mb-2">
                 Install in one command
               </p>
-              <div className="inline-flex items-center gap-3 bg-background-subtle/80 rounded-md px-4 py-3 font-mono text-sm">
-                <span className="text-foreground-muted">$</span>
-                <code className="text-foreground">npx skills add [owner/repo]</code>
-              </div>
+              <InstallCommand command="npx skills add [owner/repo]" className="inline-flex" />
             </div>
 
             {/* Agent Carousel Placeholder */}

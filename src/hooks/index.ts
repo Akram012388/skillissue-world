@@ -7,8 +7,10 @@ export { useSearchParams } from './useSearchParams';
 export {
   useHitPicks,
   useLatestDrops,
+  useLeaderboard,
   useSearchSkills,
   useSkill,
+  useSkillCount,
   useSkills,
   useTrackEvent,
 } from './useSkills';

@@ -11,9 +11,13 @@ export { CopyButton } from './CopyButton';
 export { Header } from './Header';
 // Page components
 export { HomeContent } from './HomeContent';
+export { InstallCommand } from './InstallCommand';
 // Keyboard handler
 export { KeyboardHandler, useKeyboardContext } from './KeyboardHandler';
 export { KeyboardHint } from './KeyboardHint';
+export { LeaderboardTable } from './LeaderboardTable';
+// Leaderboard components
+export { type LeaderboardTab, LeaderboardTabs } from './LeaderboardTabs';
 // Loading states
 export { LoadingSkeleton } from './LoadingSkeleton';
 export { RepoLink } from './RepoLink';
