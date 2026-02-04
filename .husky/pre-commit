@@ -1,0 +1,2 @@
+bun biome check --staged --write --no-errors-on-unmatched
+bun typecheck
