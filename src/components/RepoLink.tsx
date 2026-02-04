@@ -23,13 +23,13 @@ export function RepoLink({ url, size = 'md' }: RepoLinkProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center rounded-md transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:underline active:bg-gray-200 dark:active:bg-gray-700 ${paddingClasses[size]}`}
+      className={`inline-flex items-center justify-center rounded-md transition-all duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:underline active:bg-zinc-200 dark:active:bg-zinc-700 ${paddingClasses[size]}`}
       aria-label="View repository"
       data-testid="repo-link"
     >
       {/* GitHub icon */}
       <svg
-        className={`${iconSizeClasses[size]} text-gray-600 dark:text-gray-400`}
+        className={`${iconSizeClasses[size]} text-zinc-600 dark:text-zinc-400`}
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"

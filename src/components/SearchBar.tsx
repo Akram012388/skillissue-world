@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 
 interface SearchBarProps {
   value: string;
@@ -10,42 +10,12 @@ interface SearchBarProps {
 }
 
 /**
- * Debounce hook for search input
- * @param callback Function to call after debounce
- * @param delay Debounce delay in milliseconds
- */
-function useDebounce(callback: (value: string) => void, delay: number): (value: string) => void {
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // Cleanup timeout on unmount to prevent memory leaks
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
-
-  return useCallback(
-    (value: string) => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-
-      timeoutRef.current = setTimeout(() => {
-        callback(value);
-      }, delay);
-    },
-    [callback, delay],
-  );
-}
-
-/**
- * SearchBar component with debounced input
+ * SearchBar component with immediate visual feedback
  *
  * Features:
  * - Large centered input with monospace font
- * - Debounced onChange (150ms)
+ * - Local state for immediate typing feedback
+ * - Syncs with URL state via nuqs (which handles throttling)
  * - Clear button (X) when has value
  * - "Press / to search" hint when empty
  * - Focus ring styling
@@ -55,8 +25,13 @@ function useDebounce(callback: (value: string) => void, delay: number): (value: 
 const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
   ({ value, onChange, placeholder = 'Search skills...', autoFocus = false }, ref) => {
     const internalRef = useRef<HTMLInputElement>(null);
+    const [localValue, setLocalValue] = useState(value);
     const [isFocused, setIsFocused] = useState(false);
-    const debouncedOnChange = useDebounce(onChange, 150);
+
+    // Sync local state with external value (e.g., when URL changes)
+    useEffect(() => {
+      setLocalValue(value);
+    }, [value]);
 
     // Focus on mount if autoFocus is enabled (programmatic focus for accessibility)
     useEffect(() => {
@@ -65,13 +40,16 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
       }
     }, [autoFocus]);
 
-    // Handle local state changes
+    // Handle input changes - immediate local update, then notify parent (nuqs handles throttling)
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      debouncedOnChange(e.target.value);
+      const newValue = e.target.value;
+      setLocalValue(newValue);
+      onChange(newValue);
     };
 
     // Handle clear button
     const handleClear = () => {
+      setLocalValue('');
       onChange('');
       internalRef.current?.focus();
     };
@@ -79,6 +57,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
     // Handle escape key
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Escape') {
+        setLocalValue('');
         onChange('');
         internalRef.current?.blur();
       }
@@ -99,31 +78,34 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
               }
             }}
             type="text"
-            value={value}
+            value={localValue}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder={placeholder}
             data-testid="search-bar"
-            className="w-full px-6 py-4 text-lg font-mono bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-gray-400"
+            className="w-full px-6 py-4 text-lg font-mono bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-700 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-zinc-400 dark:placeholder-zinc-500 dark:text-zinc-100"
           />
 
           {/* Hint text when empty */}
-          {!value && !isFocused && (
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400 pointer-events-none">
-              Press <kbd className="px-2 py-1 bg-gray-100 rounded text-xs font-semibold">/</kbd> to
-              search
+          {!localValue && !isFocused && (
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-zinc-400 dark:text-zinc-500 pointer-events-none">
+              Press{' '}
+              <kbd className="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded text-xs font-semibold">
+                /
+              </kbd>{' '}
+              to search
             </div>
           )}
 
           {/* Clear button when has value */}
-          {value && (
+          {localValue && (
             <button
               type="button"
               onClick={handleClear}
               aria-label="Clear search"
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 transition-colors"
             >
               <svg
                 width="20"

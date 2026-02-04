@@ -26,7 +26,7 @@ export function Toast({ message, type, duration = 2000, onClose }: ToastProps) {
   return (
     <div
       data-testid="toast"
-      className={`fixed bottom-4 right-4 px-4 py-3 rounded-lg shadow-lg ${typeStyles[type]} animate-in slide-in-from-bottom-4 duration-300`}
+      className={`fixed bottom-4 right-4 px-4 py-3 rounded-lg shadow-lg ${typeStyles[type]} transition-all duration-300`}
       role="alert"
       aria-live="polite"
     >

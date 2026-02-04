@@ -9,25 +9,25 @@ interface LoadingSkeletonProps {
 
 function CardSkeleton() {
   return (
-    <div className="rounded-lg border border-gray-200 p-4 space-y-4 animate-pulse">
-      <div className="h-8 bg-gray-200 rounded w-3/4" />
+    <div className="rounded-lg border border-zinc-200 dark:border-zinc-700 p-4 space-y-4 animate-pulse">
+      <div className="h-8 bg-zinc-200 dark:bg-zinc-700 rounded w-3/4" />
       <div className="space-y-2">
-        <div className="h-4 bg-gray-200 rounded w-full" />
-        <div className="h-4 bg-gray-200 rounded w-5/6" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-full" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-5/6" />
       </div>
-      <div className="h-20 bg-gray-200 rounded w-full" />
+      <div className="h-20 bg-zinc-200 dark:bg-zinc-700 rounded w-full" />
     </div>
   );
 }
 
 function ListItemSkeleton() {
   return (
-    <div className="border-b border-gray-200 py-4 space-y-2 animate-pulse">
+    <div className="border-b border-zinc-200 dark:border-zinc-700 py-4 space-y-2 animate-pulse">
       <div className="flex items-center gap-4">
-        <div className="h-10 w-10 bg-gray-200 rounded-full" />
+        <div className="h-10 w-10 bg-zinc-200 dark:bg-zinc-700 rounded-full" />
         <div className="flex-1 space-y-2">
-          <div className="h-4 bg-gray-200 rounded w-1/2" />
-          <div className="h-3 bg-gray-200 rounded w-1/3" />
+          <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2" />
+          <div className="h-3 bg-zinc-200 dark:bg-zinc-700 rounded w-1/3" />
         </div>
       </div>
     </div>
@@ -37,20 +37,20 @@ function ListItemSkeleton() {
 function DetailSkeleton() {
   return (
     <div className="space-y-6 animate-pulse">
-      <div className="h-12 bg-gray-200 rounded w-1/2" />
+      <div className="h-12 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2" />
       <div className="space-y-4">
-        <div className="h-4 bg-gray-200 rounded w-full" />
-        <div className="h-4 bg-gray-200 rounded w-5/6" />
-        <div className="h-4 bg-gray-200 rounded w-4/6" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-full" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-5/6" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-4/6" />
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div className="h-24 bg-gray-200 rounded w-full" />
-        <div className="h-24 bg-gray-200 rounded w-full" />
+        <div className="h-24 bg-zinc-200 dark:bg-zinc-700 rounded w-full" />
+        <div className="h-24 bg-zinc-200 dark:bg-zinc-700 rounded w-full" />
       </div>
       <div className="space-y-2">
-        <div className="h-4 bg-gray-200 rounded w-full" />
-        <div className="h-4 bg-gray-200 rounded w-full" />
-        <div className="h-4 bg-gray-200 rounded w-5/6" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-full" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-full" />
+        <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-5/6" />
       </div>
     </div>
   );
