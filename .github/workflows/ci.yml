@@ -29,6 +29,9 @@ jobs:
       - name: Biome CI (lint + format)
         run: bun biome ci .
 
+      - name: Generate Convex types
+        run: bunx convex codegen
+
       - name: TypeScript
         run: bun typecheck
 
@@ -104,6 +107,9 @@ jobs:
           bun-version: latest
 
       - run: bun install --frozen-lockfile
+
+      - name: Generate Convex types
+        run: bunx convex codegen
 
       - name: Build Next.js
         run: bun run build
