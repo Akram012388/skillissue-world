@@ -3,9 +3,10 @@
 interface RepoLinkProps {
   url: string;
   size?: 'sm' | 'md' | 'lg';
+  className?: string;
 }
 
-export function RepoLink({ url, size = 'md' }: RepoLinkProps) {
+export function RepoLink({ url, size = 'md', className = '' }: RepoLinkProps) {
   const iconSizeClasses = {
     sm: 'w-4 h-4',
     md: 'w-5 h-5',
@@ -23,7 +24,7 @@ export function RepoLink({ url, size = 'md' }: RepoLinkProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center rounded-md transition-all duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:underline active:bg-zinc-200 dark:active:bg-zinc-700 ${paddingClasses[size]}`}
+      className={`inline-flex items-center justify-center rounded-md transition-all duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:underline active:bg-zinc-200 dark:active:bg-zinc-700 ${paddingClasses[size]} ${className}`}
       aria-label="View repository"
       data-testid="repo-link"
     >

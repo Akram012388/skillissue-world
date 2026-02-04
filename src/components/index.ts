@@ -20,7 +20,11 @@ export { LeaderboardTable } from './LeaderboardTable';
 export { type LeaderboardTab, LeaderboardTabs } from './LeaderboardTabs';
 // Loading states
 export { LoadingSkeleton } from './LoadingSkeleton';
+// Organization/Repository components
+export { OrgHeader } from './OrgHeader';
 export { RepoLink } from './RepoLink';
+export { RepoList } from './RepoList';
+export { RepoSkillList } from './RepoSkillList';
 
 // Search components
 export { default as SearchBar } from './SearchBar';
