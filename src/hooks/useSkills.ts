@@ -20,6 +20,13 @@ export function useSkill(slug: string) {
 }
 
 /**
+ * Hook to fetch a skill by org, repo, and slug
+ */
+export function useSkillByPath(org: string, repo: string, slug: string) {
+  return useQuery(api.skills.getByOrgRepoSlug, { org, repo, slug });
+}
+
+/**
  * Hook to search skills by query
  */
 export function useSearchSkills(query: string) {
@@ -79,4 +86,39 @@ export function useTrackEvent() {
     trackRepoClick: (skillSlug: string) => trackEvent({ skillSlug, action: 'repo_click' }),
     trackView: (skillSlug: string) => trackEvent({ skillSlug, action: 'view' }),
   };
+}
+
+/**
+ * Hook to fetch all skills for an organization
+ */
+export function useSkillsByOrg(org: string) {
+  return useQuery(api.skills.getByOrg, { org });
+}
+
+/**
+ * Hook to fetch skills for a specific org/repo combination
+ */
+export function useSkillsByRepo(org: string, repo: string) {
+  return useQuery(api.skills.getByOrgAndRepo, { org, repo });
+}
+
+/**
+ * Hook to fetch organization statistics
+ */
+export function useOrgStats(org: string) {
+  return useQuery(api.skills.getOrgStats, { org });
+}
+
+/**
+ * Hook to fetch repository statistics
+ */
+export function useRepoStats(org: string, repo: string) {
+  return useQuery(api.skills.getRepoStats, { org, repo });
+}
+
+/**
+ * Hook to fetch all repositories for an organization with their stats
+ */
+export function useOrgRepos(org: string) {
+  return useQuery(api.skills.getOrgRepos, { org });
 }
