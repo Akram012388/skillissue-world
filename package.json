@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"convex dev\" \"next dev --turbopack\"",
-    "build": "convex codegen && next build",
+    "build": "npx convex codegen && next build",
     "start": "next start",
     "check": "biome check .",
     "check:fix": "biome check --write .",
@@ -19,7 +19,7 @@
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
     "test": "bun run test:unit && bun run test:e2e",
-    "typecheck": "convex codegen && tsc --noEmit",
+    "typecheck": "npx convex codegen && tsc --noEmit",
     "ci": "biome ci . && bun typecheck && bun run test:unit",
     "prepare": "husky",
     "seed": "bun run scripts/seed-skills.ts",
