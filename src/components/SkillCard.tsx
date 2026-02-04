@@ -101,16 +101,23 @@ export function SkillCard({ skill, isSelected = false, selectedAgent, onCopy }: 
       {/* Stats Footer */}
       <div className="flex items-center justify-between border-t border-zinc-200 dark:border-zinc-700 pt-3 text-xs text-zinc-600 dark:text-zinc-400">
         <div className="flex gap-3">
-          <span title="Install count" className="flex items-center gap-1">
-            <span className="text-zinc-400 dark:text-zinc-500">📦</span>
+          <span className="flex items-center gap-1">
+            <span aria-hidden="true" className="text-zinc-400 dark:text-zinc-500">
+              📦
+            </span>
+            <span className="sr-only">Installs:</span>
             {skill.installs.toLocaleString()}
           </span>
-          <span title="GitHub stars" className="flex items-center gap-1">
-            <span className="text-zinc-400 dark:text-zinc-500">⭐</span>
+          <span className="flex items-center gap-1">
+            <span aria-hidden="true" className="text-zinc-400 dark:text-zinc-500">
+              ⭐
+            </span>
+            <span className="sr-only">Stars:</span>
             {skill.stars.toLocaleString()}
           </span>
         </div>
-        <span title="Last updated" className="text-right">
+        <span className="text-right">
+          <span className="sr-only">Last updated:</span>
           {lastUpdatedText}
         </span>
       </div>
