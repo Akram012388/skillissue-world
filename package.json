@@ -18,10 +18,12 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
-    "test": "bun test:unit && bun test:e2e",
+    "test": "bun run test:unit && bun run test:e2e",
     "typecheck": "tsc --noEmit",
-    "ci": "biome ci . && bun typecheck && bun test",
-    "prepare": "husky"
+    "ci": "biome ci . && bun typecheck && bun run test:unit",
+    "prepare": "husky",
+    "seed": "bun run scripts/seed-skills.ts",
+    "seed:clear": "bunx convex run skills:clearAllSkills"
   },
   "dependencies": {
     "convex": "^1.31.7",
