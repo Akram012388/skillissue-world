@@ -50,12 +50,16 @@ export function useLatestDrops(limit?: number) {
 }
 
 /**
- * Hook to fetch leaderboard data based on active tab
+ * Hook to fetch leaderboard data based on active tab.
+ * Only fetches the data for the currently active tab to avoid unnecessary queries.
  */
 export function useLeaderboard(tab: LeaderboardTab, limit?: number) {
-  const allTime = useQuery(api.skills.leaderboardAllTime, { limit });
-  const trending = useQuery(api.skills.leaderboardTrending, { limit });
-  const hot = useQuery(api.skills.leaderboardHot, { limit });
+  const allTime = useQuery(api.skills.leaderboardAllTime, tab === 'all-time' ? { limit } : 'skip');
+  const trending = useQuery(
+    api.skills.leaderboardTrending,
+    tab === 'trending' ? { limit } : 'skip',
+  );
+  const hot = useQuery(api.skills.leaderboardHot, tab === 'hot' ? { limit } : 'skip');
 
   switch (tab) {
     case 'all-time':

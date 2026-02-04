@@ -61,8 +61,16 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
       }
     };
 
+    const inputId = 'search-input';
+    const hintId = 'search-keyboard-hint';
+
     return (
       <div className="relative w-full">
+        {/* Accessible label - visually hidden but available to screen readers */}
+        <label htmlFor={inputId} className="sr-only">
+          Search skills
+        </label>
+
         <div className="relative flex items-center">
           {/* Search Icon */}
           <div className="absolute left-4 pointer-events-none text-foreground-muted">
@@ -83,6 +91,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
           </div>
 
           <input
+            id={inputId}
             ref={(node) => {
               internalRef.current = node;
               if (typeof ref === 'function') {
@@ -98,6 +107,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder={placeholder}
+            aria-describedby={!localValue && !isFocused ? hintId : undefined}
             data-testid="search-bar"
             className="w-full h-12 pl-12 pr-14 text-base bg-background-subtle border border-border rounded-lg focus:outline-none focus:border-ring focus:ring-2 focus:ring-ring/20 transition-colors placeholder:text-foreground-muted text-foreground"
           />
@@ -109,7 +119,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
                 type="button"
                 onClick={handleClear}
                 aria-label="Clear search"
-                className="p-1 text-foreground-muted hover:text-foreground transition-colors rounded"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center text-foreground-muted hover:text-foreground transition-colors rounded"
               >
                 <svg
                   width="16"
@@ -128,7 +138,11 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
               </button>
             ) : (
               !isFocused && (
-                <kbd className="px-2 py-1 text-xs font-mono text-foreground-muted bg-background-subtle border border-border rounded">
+                <kbd
+                  id={hintId}
+                  className="px-2 py-1 text-xs font-mono text-foreground-muted bg-background-subtle border border-border rounded"
+                  aria-label="Press forward slash to focus search"
+                >
                   /
                 </kbd>
               )
