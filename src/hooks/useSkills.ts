@@ -1,6 +1,7 @@
 'use client';
 
 import { useMutation, useQuery } from 'convex/react';
+import type { LeaderboardTab } from '@/components';
 import type { AgentType } from '@/types';
 import { api } from '../../convex/_generated/api';
 
@@ -39,6 +40,31 @@ export function useHitPicks(limit?: number) {
  */
 export function useLatestDrops(limit?: number) {
   return useQuery(api.skills.latestDrops, { limit });
+}
+
+/**
+ * Hook to fetch leaderboard data based on active tab
+ */
+export function useLeaderboard(tab: LeaderboardTab, limit?: number) {
+  const allTime = useQuery(api.skills.leaderboardAllTime, { limit });
+  const trending = useQuery(api.skills.leaderboardTrending, { limit });
+  const hot = useQuery(api.skills.leaderboardHot, { limit });
+
+  switch (tab) {
+    case 'all-time':
+      return allTime;
+    case 'trending':
+      return trending;
+    case 'hot':
+      return hot;
+  }
+}
+
+/**
+ * Hook to get total skill count
+ */
+export function useSkillCount() {
+  return useQuery(api.skills.getCount, {});
 }
 
 /**

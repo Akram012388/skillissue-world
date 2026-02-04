@@ -42,6 +42,64 @@ export const hitPicks = query({
   },
 });
 
+// Leaderboard query - All Time (by total installs)
+export const leaderboardAllTime = query({
+  args: { limit: v.optional(v.number()) },
+  handler: async (ctx, args) => {
+    return ctx.db
+      .query('skills')
+      .withIndex('by_installs')
+      .order('desc')
+      .take(args.limit ?? 50);
+  },
+});
+
+// Leaderboard query - Trending (by velocity/recent activity)
+export const leaderboardTrending = query({
+  args: { limit: v.optional(v.number()) },
+  handler: async (ctx, args) => {
+    // For now, use lastUpdated as a proxy for trending
+    // In production, this would use a velocity score
+    return ctx.db
+      .query('skills')
+      .withIndex('by_lastUpdated')
+      .order('desc')
+      .take(args.limit ?? 50);
+  },
+});
+
+// Leaderboard query - Hot (featured skills or combination of metrics)
+export const leaderboardHot = query({
+  args: { limit: v.optional(v.number()) },
+  handler: async (ctx, args) => {
+    // Get all skills and sort by a "heat" score
+    // Heat = installs * recency factor
+    const skills = await ctx.db.query('skills').collect();
+    const now = new Date();
+
+    const scored = skills.map((skill) => {
+      const lastUpdated = new Date(skill.lastUpdated);
+      const daysSinceUpdate = (now.getTime() - lastUpdated.getTime()) / (1000 * 60 * 60 * 24);
+      // Decay factor: more recent = higher score
+      const recencyFactor = Math.exp(-daysSinceUpdate / 30); // 30-day half-life
+      const heatScore = skill.installs * recencyFactor;
+      return { ...skill, heatScore };
+    });
+
+    scored.sort((a, b) => b.heatScore - a.heatScore);
+    return scored.slice(0, args.limit ?? 50);
+  },
+});
+
+// Get total count of skills
+export const getCount = query({
+  args: {},
+  handler: async (ctx) => {
+    const skills = await ctx.db.query('skills').collect();
+    return skills.length;
+  },
+});
+
 export const latestDrops = query({
   args: { limit: v.optional(v.number()) },
   handler: async (ctx, args) => {
