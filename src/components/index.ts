@@ -3,6 +3,8 @@
  * All UI components used across the application
  */
 
+// Skill display components
+export { AgentBreakdown } from './AgentBreakdown';
 // Action components
 export { AgentToggle } from './AgentToggle';
 export { Breadcrumb, buildBreadcrumbs } from './Breadcrumb';
@@ -25,14 +27,13 @@ export { OrgHeader } from './OrgHeader';
 export { RepoLink } from './RepoLink';
 export { RepoList } from './RepoList';
 export { RepoSkillList } from './RepoSkillList';
-
 // Search components
 export { default as SearchBar } from './SearchBar';
 export { default as SearchResults } from './SearchResults';
-
-// Skill display components
 export { SkillCard } from './SkillCard';
 export { SkillDetail } from './SkillDetail';
+export { SkillSidebar } from './SkillSidebar';
+export { StatCard } from './StatCard';
 
 // Feedback components
 export { Toast } from './Toast';
