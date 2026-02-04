@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import type { ReactNode } from 'react';
-import { KeyboardHandler } from '@/components';
+import { Header, KeyboardHandler } from '@/components';
 import { Providers } from './providers';
 import './globals.css';
 
@@ -19,12 +19,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'SkillIssue.world - Official Agent Skills Directory',
   description:
-    'The no-BS encyclopedia for official agent skills. Search, copy, go. Curated directory of skills from Vercel, Anthropic, OpenAI, and more.',
+    'The open agent skills ecosystem. Search, copy install command, go. Curated directory of skills from Vercel, Anthropic, OpenAI, and more.',
   keywords: ['agent skills', 'claude code', 'cursor', 'codex cli', 'AI agents', 'developer tools'],
   authors: [{ name: 'SkillIssue.world' }],
   openGraph: {
     title: 'SkillIssue.world - Official Agent Skills Directory',
-    description: 'Search, copy, go. The curated directory of official agent skills.',
+    description: 'The open agent skills ecosystem. Search, copy, go.',
     url: 'https://skillissue.world',
     siteName: 'SkillIssue.world',
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'SkillIssue.world',
-    description: 'The no-BS encyclopedia for official agent skills.',
+    description: 'The open agent skills ecosystem.',
   },
 };
 
@@ -42,11 +42,16 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps): ReactNode {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className="dark">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
+      >
         <NuqsAdapter>
           <Providers>
-            <KeyboardHandler>{children}</KeyboardHandler>
+            <KeyboardHandler>
+              <Header />
+              <main className="max-w-6xl mx-auto px-4">{children}</main>
+            </KeyboardHandler>
           </Providers>
         </NuqsAdapter>
       </body>
