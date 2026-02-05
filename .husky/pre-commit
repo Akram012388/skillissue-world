@@ -1,2 +1,18 @@
 bun biome check --staged --write --no-errors-on-unmatched
-bun typecheck
+
+if [ -z "$CONVEX_DEPLOY_KEY" ]; then
+  echo "warning: CONVEX_DEPLOY_KEY not set; skipping convex codegen"
+else
+  CODEGEN_OUTPUT="$(bun x convex codegen 2>&1)"
+  CODEGEN_STATUS=$?
+  if [ $CODEGEN_STATUS -ne 0 ]; then
+    echo "$CODEGEN_OUTPUT"
+    if echo "$CODEGEN_OUTPUT" | grep -Eq "AuthenticationFailed|InternalServerError|Error fetching|ECONN|ENOTFOUND|ETIMEDOUT|502|503|504|401"; then
+      echo "warning: convex codegen failed (network/auth). Skipping."
+    else
+      exit $CODEGEN_STATUS
+    fi
+  fi
+fi
+
+bun x tsc --noEmit
