@@ -44,7 +44,8 @@ export function HomeContent({ initialQuery: _initialQuery = '' }: HomeContentPro
   const hotSpots = useHotSpots(SECTION_LIMIT);
   const allSkills = useSkills();
 
-  const isFiltering = query.trim().length > 0 || Boolean(tag);
+  const hasQuery = query.trim().length > 0;
+  const isFiltering = hasQuery || Boolean(tag);
   const filterKey = `${query}|${tag ?? ''}|${isFiltering ? '1' : '0'}`;
   const lastFilterKeyRef = useRef(filterKey);
 
@@ -82,6 +83,16 @@ export function HomeContent({ initialQuery: _initialQuery = '' }: HomeContentPro
       .map(([tagName, count]) => ({ tag: tagName, count }))
       .sort((a, b) => (b.count !== a.count ? b.count - a.count : a.tag.localeCompare(b.tag)));
   }, [allSkills]);
+
+  const searchTagCounts = useMemo(() => {
+    if (!hasQuery) {
+      return tagCounts;
+    }
+    if (!tag) {
+      return [];
+    }
+    return tagCounts.filter((tagCount) => tagCount.tag === tag);
+  }, [hasQuery, tagCounts, tag]);
 
   const resultLabel = useMemo(() => {
     const parts: string[] = [];
@@ -150,7 +161,7 @@ export function HomeContent({ initialQuery: _initialQuery = '' }: HomeContentPro
         // Search Results View
         <div className="flex flex-col gap-4">
           <CategoryChips
-            tags={tagCounts}
+            tags={searchTagCounts}
             activeTag={tag}
             onSelect={(selectedTag) => {
               setTag(selectedTag);
