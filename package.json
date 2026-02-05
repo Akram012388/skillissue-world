@@ -23,7 +23,9 @@
     "ci": "biome ci . && bun typecheck && bun run test:unit",
     "prepare": "husky",
     "seed": "bun run scripts/seed-skills.ts",
-    "seed:clear": "bunx convex run skills:clearAllSkills"
+    "seed:clear": "bunx convex run skills:clearAllSkills",
+    "validate:data": "bun run scripts/validate-skills.ts",
+    "normalize:data": "bun run scripts/normalize-skills.ts"
   },
   "dependencies": {
     "convex": "^1.31.7",

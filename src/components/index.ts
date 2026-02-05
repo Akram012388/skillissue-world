@@ -8,6 +8,7 @@ export { AgentBreakdown } from './AgentBreakdown';
 // Action components
 export { AgentToggle } from './AgentToggle';
 export { Breadcrumb, buildBreadcrumbs } from './Breadcrumb';
+export { CategoryChips } from './CategoryChips';
 export { CopyButton } from './CopyButton';
 // Layout components
 export { Header } from './Header';

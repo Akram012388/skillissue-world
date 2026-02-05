@@ -45,7 +45,7 @@ export function SkillDetail({ skill, selectedAgent }: SkillDetailProps): ReactNo
 
         {/* SKILL.md Content (if available) */}
         {skill.longDescription && skill.longDescription !== skill.description && (
-          <div className="prose prose-invert max-w-none">
+          <div className="max-w-none">
             <h2 className="text-xs uppercase text-foreground-muted mb-3 tracking-wide">About</h2>
             <div className="text-foreground-muted leading-relaxed whitespace-pre-wrap">
               {skill.longDescription}
@@ -61,7 +61,7 @@ export function SkillDetail({ skill, selectedAgent }: SkillDetailProps): ReactNo
               {skill.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center px-3 py-1 bg-background-subtle rounded-full text-sm text-foreground-muted"
+                  className="inline-flex items-center px-3 py-1 bg-background-subtle border border-border rounded-full text-sm text-foreground-muted"
                 >
                   {tag}
                 </span>

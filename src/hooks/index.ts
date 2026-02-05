@@ -6,6 +6,7 @@ export { useKeyboard } from './useKeyboard';
 export { useSearchParams } from './useSearchParams';
 export {
   useHitPicks,
+  useHotSpots,
   useLatestDrops,
   useLeaderboard,
   useOrgRepos,

@@ -9,15 +9,31 @@ export const list = query({
 });
 
 export const search = query({
-  args: { query: v.string() },
+  args: { query: v.string(), tag: v.optional(v.string()) },
   handler: async (ctx, args) => {
-    if (!args.query.trim()) {
+    const queryValue = args.query.trim().toLowerCase();
+    const tagValue = args.tag?.trim().toLowerCase();
+
+    if (!queryValue && !tagValue) {
       return ctx.db.query('skills').withIndex('by_installs').order('desc').take(20);
     }
-    return ctx.db
-      .query('skills')
-      .withSearchIndex('search_skills', (q) => q.search('name', args.query))
-      .take(50);
+
+    const skills = await ctx.db.query('skills').collect();
+
+    const filtered = skills.filter((skill) => {
+      const matchesQuery =
+        !queryValue ||
+        skill.name.toLowerCase().includes(queryValue) ||
+        skill.description.toLowerCase().includes(queryValue) ||
+        skill.org.toLowerCase().includes(queryValue) ||
+        skill.tags.some((tag) => tag.toLowerCase().includes(queryValue));
+
+      const matchesTag = !tagValue || skill.tags.some((tag) => tag.toLowerCase() === tagValue);
+
+      return matchesQuery && matchesTag;
+    });
+
+    return filtered.sort((a, b) => b.installs - a.installs).slice(0, 50);
   },
 });
 

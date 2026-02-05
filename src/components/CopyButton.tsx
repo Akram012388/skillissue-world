@@ -42,14 +42,14 @@ export function CopyButton({ text, onCopied, size = 'md' }: CopyButtonProps) {
     <button
       type="button"
       onClick={handleCopy}
-      className={`inline-flex items-center justify-center rounded-md transition-colors duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 active:bg-zinc-200 dark:active:bg-zinc-700 ${sizeClasses[size]}`}
+      className={`inline-flex items-center justify-center rounded-md transition-colors duration-200 hover:bg-background-subtle active:bg-background-subtle ${sizeClasses[size]}`}
       aria-label="Copy to clipboard"
       data-testid="copy-button"
     >
       {copied ? (
         // Checkmark icon
         <svg
-          className={`${iconSizeClasses[size]} text-green-600`}
+          className={`${iconSizeClasses[size]} text-success-600`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -61,7 +61,7 @@ export function CopyButton({ text, onCopied, size = 'md' }: CopyButtonProps) {
       ) : (
         // Copy icon
         <svg
-          className={`${iconSizeClasses[size]} text-zinc-600 dark:text-zinc-400`}
+          className={`${iconSizeClasses[size]} text-foreground-muted`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

@@ -147,9 +147,13 @@ Expandable based on skill distribution.
 
 ### 5.7 Skill Detail Pages (P1 - Should Have)
 
-URL pattern: `/skill/[org]-[repo]`
+URL pattern: `/skill/[slug]`
 
-Example: `/skill/vercel-labs-react-best-practices`
+Example: `/skill/mcp-server-filesystem`
+
+Note: A single repo can contain multiple skills, so the canonical route is
+per-skill slug. Hierarchical browsing routes like `/[org]/[repo]/[skill]` may
+also exist for discovery, but the canonical detail route is `/skill/[slug]`.
 
 Full detail view with:
 - All card info expanded
@@ -192,10 +196,10 @@ Full detail view with:
 
 ```typescript
 interface Skill {
-  id: string;                    // org-repo slug
+  slug: string;                  // Unique skill slug
   name: string;                  // Display name
   org: string;                   // GitHub org
-  repo: string;                  // Repo name
+  repo: string;                  // Repo name (no org prefix)
   description: string;           // 1-3 sentences
   commands: {
     claudeCode: string;          // Default

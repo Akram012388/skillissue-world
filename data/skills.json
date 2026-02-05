@@ -3,7 +3,7 @@
     "slug": "mcp-server-filesystem",
     "name": "Filesystem",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Read, write, and manage files on your local filesystem. Essential for code editing workflows.",
     "commands": {
       "claudeCode": "claude mcp add filesystem -- npx -y @anthropic-ai/mcp-server-filesystem /path/to/allowed/dir"
@@ -22,7 +22,7 @@
     "slug": "mcp-server-github",
     "name": "GitHub",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Interact with GitHub repositories, issues, pull requests, and more via the GitHub API.",
     "commands": {
       "claudeCode": "claude mcp add github -- npx -y @anthropic-ai/mcp-server-github"
@@ -41,7 +41,7 @@
     "slug": "mcp-server-postgres",
     "name": "PostgreSQL",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Connect to PostgreSQL databases. Run queries, inspect schemas, and manage data.",
     "commands": {
       "claudeCode": "claude mcp add postgres -- npx -y @anthropic-ai/mcp-server-postgres postgresql://localhost/mydb"
@@ -59,7 +59,7 @@
     "slug": "mcp-server-sqlite",
     "name": "SQLite",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Work with SQLite databases locally. Perfect for prototyping and local development.",
     "commands": {
       "claudeCode": "claude mcp add sqlite -- npx -y @anthropic-ai/mcp-server-sqlite /path/to/database.db"
@@ -77,7 +77,7 @@
     "slug": "mcp-server-brave-search",
     "name": "Brave Search",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Search the web using Brave Search API. Get real-time search results in your agent.",
     "commands": {
       "claudeCode": "claude mcp add brave-search -- npx -y @anthropic-ai/mcp-server-brave-search"
@@ -95,7 +95,7 @@
     "slug": "mcp-server-fetch",
     "name": "Fetch",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Fetch and parse web pages. Convert HTML to markdown for easy processing.",
     "commands": {
       "claudeCode": "claude mcp add fetch -- npx -y @anthropic-ai/mcp-server-fetch"
@@ -113,7 +113,7 @@
     "slug": "mcp-server-memory",
     "name": "Memory",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Persistent memory for your agent using a local knowledge graph. Remember context across sessions.",
     "commands": {
       "claudeCode": "claude mcp add memory -- npx -y @anthropic-ai/mcp-server-memory"
@@ -132,7 +132,7 @@
     "slug": "mcp-server-puppeteer",
     "name": "Puppeteer",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Browser automation with Puppeteer. Navigate, screenshot, and interact with web pages.",
     "commands": {
       "claudeCode": "claude mcp add puppeteer -- npx -y @anthropic-ai/mcp-server-puppeteer"
@@ -150,7 +150,7 @@
     "slug": "mcp-server-slack",
     "name": "Slack",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Read and post messages to Slack channels. Manage your team communication.",
     "commands": {
       "claudeCode": "claude mcp add slack -- npx -y @anthropic-ai/mcp-server-slack"
@@ -168,7 +168,7 @@
     "slug": "mcp-server-google-drive",
     "name": "Google Drive",
     "org": "anthropics",
-    "repo": "anthropics/mcp-servers",
+    "repo": "mcp-servers",
     "description": "Access and manage files in Google Drive. Search, read, and organize your documents.",
     "commands": {
       "claudeCode": "claude mcp add google-drive -- npx -y @anthropic-ai/mcp-server-google-drive"
@@ -186,7 +186,7 @@
     "slug": "ai-sdk",
     "name": "AI SDK",
     "org": "vercel",
-    "repo": "vercel/ai",
+    "repo": "ai",
     "description": "The AI Toolkit for TypeScript. Build AI-powered apps with React, Next.js, and more.",
     "commands": {
       "claudeCode": "claude mcp add ai-sdk -- npx -y @vercel/ai-sdk-mcp"
@@ -205,7 +205,7 @@
     "slug": "next-mcp",
     "name": "Next.js",
     "org": "vercel",
-    "repo": "vercel/next.js",
+    "repo": "next.js",
     "description": "Next.js development tools. Create, build, and deploy React applications.",
     "commands": {
       "claudeCode": "claude mcp add nextjs -- npx -y @vercel/mcp-server-nextjs"
@@ -224,7 +224,7 @@
     "slug": "vercel-mcp",
     "name": "Vercel",
     "org": "vercel",
-    "repo": "vercel/vercel",
+    "repo": "vercel",
     "description": "Deploy and manage Vercel projects. Handle deployments, domains, and environment variables.",
     "commands": {
       "claudeCode": "claude mcp add vercel -- npx -y @vercel/mcp-server"
@@ -242,7 +242,7 @@
     "slug": "swr-mcp",
     "name": "SWR",
     "org": "vercel",
-    "repo": "vercel/swr",
+    "repo": "swr",
     "description": "React Hooks for data fetching. Stale-while-revalidate caching strategy.",
     "commands": {
       "claudeCode": "claude mcp add swr -- npx -y @vercel/mcp-server-swr"
@@ -260,7 +260,7 @@
     "slug": "turborepo-mcp",
     "name": "Turborepo",
     "org": "vercel",
-    "repo": "vercel/turborepo",
+    "repo": "turborepo",
     "description": "High-performance monorepo build system. Incremental builds and remote caching.",
     "commands": {
       "claudeCode": "claude mcp add turborepo -- npx -y @vercel/mcp-server-turborepo"
@@ -278,7 +278,7 @@
     "slug": "vercel-blob-mcp",
     "name": "Vercel Blob",
     "org": "vercel",
-    "repo": "vercel/storage",
+    "repo": "storage",
     "description": "Upload and manage files with Vercel Blob. Serverless file storage.",
     "commands": {
       "claudeCode": "claude mcp add vercel-blob -- npx -y @vercel/mcp-server-blob"
@@ -296,7 +296,7 @@
     "slug": "vercel-kv-mcp",
     "name": "Vercel KV",
     "org": "vercel",
-    "repo": "vercel/storage",
+    "repo": "storage",
     "description": "Redis-compatible key-value store. Serverless KV for edge functions.",
     "commands": {
       "claudeCode": "claude mcp add vercel-kv -- npx -y @vercel/mcp-server-kv"
@@ -314,7 +314,7 @@
     "slug": "ai-chatbot-template",
     "name": "AI Chatbot Template",
     "org": "vercel",
-    "repo": "vercel/ai-chatbot",
+    "repo": "ai-chatbot",
     "description": "Full-featured AI chatbot template. Next.js, AI SDK, and authentication ready.",
     "commands": {
       "claudeCode": "claude mcp add ai-chatbot -- npx -y @vercel/mcp-server-ai-chatbot"
@@ -332,7 +332,7 @@
     "slug": "supabase-mcp",
     "name": "Supabase",
     "org": "supabase",
-    "repo": "supabase/supabase",
+    "repo": "supabase",
     "description": "Full Supabase platform access. Database, auth, storage, and realtime features.",
     "commands": {
       "claudeCode": "claude mcp add supabase -- npx -y @supabase/mcp-server"
@@ -351,7 +351,7 @@
     "slug": "supabase-auth-mcp",
     "name": "Supabase Auth",
     "org": "supabase",
-    "repo": "supabase/auth",
+    "repo": "auth",
     "description": "Authentication and user management. OAuth, magic links, and session handling.",
     "commands": {
       "claudeCode": "claude mcp add supabase-auth -- npx -y @supabase/mcp-server-auth"
@@ -369,7 +369,7 @@
     "slug": "supabase-realtime-mcp",
     "name": "Supabase Realtime",
     "org": "supabase",
-    "repo": "supabase/realtime",
+    "repo": "realtime",
     "description": "Real-time subscriptions for Postgres. Listen to database changes instantly.",
     "commands": {
       "claudeCode": "claude mcp add supabase-realtime -- npx -y @supabase/mcp-server-realtime"
@@ -387,7 +387,7 @@
     "slug": "supabase-storage-mcp",
     "name": "Supabase Storage",
     "org": "supabase",
-    "repo": "supabase/storage",
+    "repo": "storage",
     "description": "S3-compatible object storage. Upload, download, and manage files.",
     "commands": {
       "claudeCode": "claude mcp add supabase-storage -- npx -y @supabase/mcp-server-storage"
@@ -405,7 +405,7 @@
     "slug": "supabase-edge-functions",
     "name": "Supabase Edge Functions",
     "org": "supabase",
-    "repo": "supabase/edge-runtime",
+    "repo": "edge-runtime",
     "description": "Deno-based edge functions. Deploy serverless functions globally.",
     "commands": {
       "claudeCode": "claude mcp add supabase-edge -- npx -y @supabase/mcp-server-edge"
@@ -423,7 +423,7 @@
     "slug": "supabase-cli-mcp",
     "name": "Supabase CLI",
     "org": "supabase",
-    "repo": "supabase/cli",
+    "repo": "cli",
     "description": "Supabase CLI tools. Local development, migrations, and project management.",
     "commands": {
       "claudeCode": "claude mcp add supabase-cli -- npx -y @supabase/mcp-server-cli"
@@ -441,7 +441,7 @@
     "slug": "github-copilot-mcp",
     "name": "GitHub Copilot",
     "org": "github",
-    "repo": "github/copilot.vim",
+    "repo": "copilot.vim",
     "description": "GitHub Copilot integration. AI-powered code suggestions and completions.",
     "commands": {
       "claudeCode": "claude mcp add github-copilot -- npx -y @github/mcp-server-copilot"
@@ -460,7 +460,7 @@
     "slug": "github-cli-mcp",
     "name": "GitHub CLI",
     "org": "github",
-    "repo": "cli/cli",
+    "repo": "cli",
     "description": "GitHub CLI in your agent. Manage repos, issues, PRs, and workflows.",
     "commands": {
       "claudeCode": "claude mcp add gh-cli -- npx -y @github/mcp-server-cli"
@@ -469,7 +469,7 @@
     "agents": ["claude-code"],
     "installs": 45200,
     "stars": 37500,
-    "repoUrl": "https://github.com/cli/cli",
+    "repoUrl": "https://github.com/github/cli",
     "verified": true,
     "lastUpdated": "2025-01-23T00:00:00Z",
     "addedAt": "2024-08-15T00:00:00Z"
@@ -478,7 +478,7 @@
     "slug": "github-actions-mcp",
     "name": "GitHub Actions",
     "org": "github",
-    "repo": "actions/toolkit",
+    "repo": "toolkit",
     "description": "Create and manage GitHub Actions. Automate workflows and CI/CD pipelines.",
     "commands": {
       "claudeCode": "claude mcp add gh-actions -- npx -y @github/mcp-server-actions"
@@ -487,7 +487,7 @@
     "agents": ["claude-code"],
     "installs": 38900,
     "stars": 4800,
-    "repoUrl": "https://github.com/actions/toolkit",
+    "repoUrl": "https://github.com/github/toolkit",
     "verified": true,
     "lastUpdated": "2025-01-21T00:00:00Z",
     "addedAt": "2024-09-01T00:00:00Z"
@@ -496,7 +496,7 @@
     "slug": "github-linguist-mcp",
     "name": "GitHub Linguist",
     "org": "github",
-    "repo": "github-linguist/linguist",
+    "repo": "linguist",
     "description": "Language detection and syntax highlighting. Identify file types and languages.",
     "commands": {
       "claudeCode": "claude mcp add linguist -- npx -y @github/mcp-server-linguist"
@@ -505,7 +505,7 @@
     "agents": ["claude-code"],
     "installs": 12400,
     "stars": 12300,
-    "repoUrl": "https://github.com/github-linguist/linguist",
+    "repoUrl": "https://github.com/github/linguist",
     "verified": true,
     "lastUpdated": "2025-01-15T00:00:00Z",
     "addedAt": "2024-11-15T00:00:00Z"
@@ -514,7 +514,7 @@
     "slug": "gitignore-templates",
     "name": "Gitignore Templates",
     "org": "github",
-    "repo": "github/gitignore",
+    "repo": "gitignore",
     "description": "Collection of gitignore templates. Generate appropriate ignore files for any project.",
     "commands": {
       "claudeCode": "claude mcp add gitignore -- npx -y @github/mcp-server-gitignore"
@@ -532,7 +532,7 @@
     "slug": "github-codeql",
     "name": "CodeQL",
     "org": "github",
-    "repo": "github/codeql",
+    "repo": "codeql",
     "description": "Semantic code analysis engine. Find vulnerabilities and security issues.",
     "commands": {
       "claudeCode": "claude mcp add codeql -- npx -y @github/mcp-server-codeql"
@@ -550,7 +550,7 @@
     "slug": "openai-gpt-mcp",
     "name": "OpenAI GPT",
     "org": "openai",
-    "repo": "openai/openai-python",
+    "repo": "openai-python",
     "description": "OpenAI API integration. Access GPT models, embeddings, and more.",
     "commands": {
       "claudeCode": "claude mcp add openai-gpt -- npx -y @openai/mcp-server"
@@ -569,7 +569,7 @@
     "slug": "openai-whisper-mcp",
     "name": "Whisper",
     "org": "openai",
-    "repo": "openai/whisper",
+    "repo": "whisper",
     "description": "Speech-to-text transcription. Multilingual audio transcription with high accuracy.",
     "commands": {
       "claudeCode": "claude mcp add whisper -- npx -y @openai/mcp-server-whisper"
@@ -587,7 +587,7 @@
     "slug": "openai-tiktoken",
     "name": "Tiktoken",
     "org": "openai",
-    "repo": "openai/tiktoken",
+    "repo": "tiktoken",
     "description": "Fast BPE tokenizer. Count tokens and encode/decode text for GPT models.",
     "commands": {
       "claudeCode": "claude mcp add tiktoken -- npx -y @openai/mcp-server-tiktoken"
@@ -605,7 +605,7 @@
     "slug": "openai-triton",
     "name": "Triton",
     "org": "openai",
-    "repo": "openai/triton",
+    "repo": "triton",
     "description": "GPU programming language. Write efficient custom CUDA kernels in Python.",
     "commands": {
       "claudeCode": "claude mcp add triton -- npx -y @openai/mcp-server-triton"
@@ -623,7 +623,7 @@
     "slug": "openai-clip",
     "name": "CLIP",
     "org": "openai",
-    "repo": "openai/CLIP",
+    "repo": "CLIP",
     "description": "Contrastive Language-Image Pre-training. Connect text and images for multimodal AI.",
     "commands": {
       "claudeCode": "claude mcp add clip -- npx -y @openai/mcp-server-clip"
@@ -641,7 +641,7 @@
     "slug": "openai-chatgpt-plugins",
     "name": "ChatGPT Plugins",
     "org": "openai",
-    "repo": "openai/chatgpt-retrieval-plugin",
+    "repo": "chatgpt-retrieval-plugin",
     "description": "ChatGPT plugin framework. Build custom plugins for ChatGPT.",
     "commands": {
       "claudeCode": "claude mcp add chatgpt-plugins -- npx -y @openai/mcp-server-plugins"
@@ -659,7 +659,7 @@
     "slug": "vscode-mcp",
     "name": "VS Code",
     "org": "microsoft",
-    "repo": "microsoft/vscode",
+    "repo": "vscode",
     "description": "VS Code integration. Control the editor, manage extensions, and edit files.",
     "commands": {
       "claudeCode": "claude mcp add vscode -- npx -y @microsoft/mcp-server-vscode"
@@ -678,7 +678,7 @@
     "slug": "typescript-mcp",
     "name": "TypeScript",
     "org": "microsoft",
-    "repo": "microsoft/TypeScript",
+    "repo": "TypeScript",
     "description": "TypeScript language services. Type checking, compilation, and code intelligence.",
     "commands": {
       "claudeCode": "claude mcp add typescript -- npx -y @microsoft/mcp-server-typescript"
@@ -697,7 +697,7 @@
     "slug": "playwright-mcp",
     "name": "Playwright",
     "org": "microsoft",
-    "repo": "microsoft/playwright",
+    "repo": "playwright",
     "description": "Browser automation and testing. Cross-browser testing with a unified API.",
     "commands": {
       "claudeCode": "claude mcp add playwright -- npx -y @microsoft/mcp-server-playwright"
@@ -715,7 +715,7 @@
     "slug": "azure-sdk-mcp",
     "name": "Azure SDK",
     "org": "microsoft",
-    "repo": "Azure/azure-sdk-for-js",
+    "repo": "azure-sdk-for-js",
     "description": "Azure cloud services SDK. Storage, functions, databases, and more.",
     "commands": {
       "claudeCode": "claude mcp add azure-sdk -- npx -y @azure/mcp-server"
@@ -724,7 +724,7 @@
     "agents": ["claude-code"],
     "installs": 35400,
     "stars": 2100,
-    "repoUrl": "https://github.com/Azure/azure-sdk-for-js",
+    "repoUrl": "https://github.com/microsoft/azure-sdk-for-js",
     "verified": true,
     "lastUpdated": "2025-01-21T00:00:00Z",
     "addedAt": "2024-09-01T00:00:00Z"
@@ -733,7 +733,7 @@
     "slug": "semantic-kernel",
     "name": "Semantic Kernel",
     "org": "microsoft",
-    "repo": "microsoft/semantic-kernel",
+    "repo": "semantic-kernel",
     "description": "AI orchestration framework. Combine AI services with conventional code.",
     "commands": {
       "claudeCode": "claude mcp add semantic-kernel -- npx -y @microsoft/mcp-server-semantic-kernel"
@@ -751,7 +751,7 @@
     "slug": "pyright-mcp",
     "name": "Pyright",
     "org": "microsoft",
-    "repo": "microsoft/pyright",
+    "repo": "pyright",
     "description": "Static type checker for Python. Fast and accurate type analysis.",
     "commands": {
       "claudeCode": "claude mcp add pyright -- npx -y @microsoft/mcp-server-pyright"
@@ -769,7 +769,7 @@
     "slug": "monaco-editor-mcp",
     "name": "Monaco Editor",
     "org": "microsoft",
-    "repo": "microsoft/monaco-editor",
+    "repo": "monaco-editor",
     "description": "Code editor that powers VS Code. Embed a powerful editor in any web app.",
     "commands": {
       "claudeCode": "claude mcp add monaco -- npx -y @microsoft/mcp-server-monaco"
@@ -787,7 +787,7 @@
     "slug": "fluentui-mcp",
     "name": "Fluent UI",
     "org": "microsoft",
-    "repo": "microsoft/fluentui",
+    "repo": "fluentui",
     "description": "Microsoft's design system. React components following Fluent Design.",
     "commands": {
       "claudeCode": "claude mcp add fluentui -- npx -y @microsoft/mcp-server-fluentui"
@@ -805,7 +805,7 @@
     "slug": "stripe-mcp",
     "name": "Stripe",
     "org": "stripe",
-    "repo": "stripe/stripe-node",
+    "repo": "stripe-node",
     "description": "Stripe payment integration. Process payments, subscriptions, and invoices.",
     "commands": {
       "claudeCode": "claude mcp add stripe -- npx -y @stripe/mcp-server"
@@ -824,7 +824,7 @@
     "slug": "prisma-mcp",
     "name": "Prisma",
     "org": "prisma",
-    "repo": "prisma/prisma",
+    "repo": "prisma",
     "description": "Next-generation ORM for Node.js. Type-safe database access and migrations.",
     "commands": {
       "claudeCode": "claude mcp add prisma -- npx -y @prisma/mcp-server"
@@ -843,7 +843,7 @@
     "slug": "drizzle-mcp",
     "name": "Drizzle ORM",
     "org": "drizzle-team",
-    "repo": "drizzle-team/drizzle-orm",
+    "repo": "drizzle-orm",
     "description": "Lightweight TypeScript ORM. SQL-like syntax with full type safety.",
     "commands": {
       "claudeCode": "claude mcp add drizzle -- npx -y @drizzle-team/mcp-server"
@@ -861,7 +861,7 @@
     "slug": "trpc-mcp",
     "name": "tRPC",
     "org": "trpc",
-    "repo": "trpc/trpc",
+    "repo": "trpc",
     "description": "End-to-end typesafe APIs. Build and consume APIs with full TypeScript support.",
     "commands": {
       "claudeCode": "claude mcp add trpc -- npx -y @trpc/mcp-server"
@@ -879,7 +879,7 @@
     "slug": "zod-mcp",
     "name": "Zod",
     "org": "colinhacks",
-    "repo": "colinhacks/zod",
+    "repo": "zod",
     "description": "TypeScript-first schema validation. Define and validate data structures.",
     "commands": {
       "claudeCode": "claude mcp add zod -- npx -y @zod/mcp-server"
@@ -897,7 +897,7 @@
     "slug": "tanstack-query-mcp",
     "name": "TanStack Query",
     "org": "TanStack",
-    "repo": "TanStack/query",
+    "repo": "query",
     "description": "Powerful data synchronization for React. Caching, background updates, and more.",
     "commands": {
       "claudeCode": "claude mcp add tanstack-query -- npx -y @tanstack/mcp-server-query"
@@ -915,7 +915,7 @@
     "slug": "tanstack-router-mcp",
     "name": "TanStack Router",
     "org": "TanStack",
-    "repo": "TanStack/router",
+    "repo": "router",
     "description": "Type-safe routing for React. Full TypeScript support with file-based routing.",
     "commands": {
       "claudeCode": "claude mcp add tanstack-router -- npx -y @tanstack/mcp-server-router"
@@ -933,7 +933,7 @@
     "slug": "tailwindcss-mcp",
     "name": "Tailwind CSS",
     "org": "tailwindlabs",
-    "repo": "tailwindlabs/tailwindcss",
+    "repo": "tailwindcss",
     "description": "Utility-first CSS framework. Build designs directly in your markup.",
     "commands": {
       "claudeCode": "claude mcp add tailwindcss -- npx -y @tailwindcss/mcp-server"
@@ -952,7 +952,7 @@
     "slug": "headlessui-mcp",
     "name": "Headless UI",
     "org": "tailwindlabs",
-    "repo": "tailwindlabs/headlessui",
+    "repo": "headlessui",
     "description": "Unstyled accessible UI components. Build your own design system.",
     "commands": {
       "claudeCode": "claude mcp add headlessui -- npx -y @headlessui/mcp-server"
@@ -970,7 +970,7 @@
     "slug": "heroicons-mcp",
     "name": "Heroicons",
     "org": "tailwindlabs",
-    "repo": "tailwindlabs/heroicons",
+    "repo": "heroicons",
     "description": "Beautiful hand-crafted SVG icons. Optimized for React and Vue.",
     "commands": {
       "claudeCode": "claude mcp add heroicons -- npx -y @heroicons/mcp-server"
@@ -988,7 +988,7 @@
     "slug": "eslint-mcp",
     "name": "ESLint",
     "org": "eslint",
-    "repo": "eslint/eslint",
+    "repo": "eslint",
     "description": "Pluggable JavaScript linter. Find and fix code quality issues.",
     "commands": {
       "claudeCode": "claude mcp add eslint -- npx -y @eslint/mcp-server"
@@ -1006,7 +1006,7 @@
     "slug": "biome-mcp",
     "name": "Biome",
     "org": "biomejs",
-    "repo": "biomejs/biome",
+    "repo": "biome",
     "description": "Fast formatter and linter. Drop-in replacement for ESLint and Prettier.",
     "commands": {
       "claudeCode": "claude mcp add biome -- npx -y @biomejs/mcp-server"
@@ -1024,7 +1024,7 @@
     "slug": "docker-mcp",
     "name": "Docker",
     "org": "docker",
-    "repo": "docker/cli",
+    "repo": "cli",
     "description": "Docker container management. Build, run, and manage containers.",
     "commands": {
       "claudeCode": "claude mcp add docker -- npx -y @docker/mcp-server"
@@ -1042,7 +1042,7 @@
     "slug": "kubernetes-mcp",
     "name": "Kubernetes",
     "org": "kubernetes",
-    "repo": "kubernetes/kubernetes",
+    "repo": "kubernetes",
     "description": "Kubernetes cluster management. Deploy and manage containerized applications.",
     "commands": {
       "claudeCode": "claude mcp add kubernetes -- npx -y @kubernetes/mcp-server"
@@ -1060,7 +1060,7 @@
     "slug": "terraform-mcp",
     "name": "Terraform",
     "org": "hashicorp",
-    "repo": "hashicorp/terraform",
+    "repo": "terraform",
     "description": "Infrastructure as Code tool. Provision and manage cloud resources.",
     "commands": {
       "claudeCode": "claude mcp add terraform -- npx -y @hashicorp/mcp-server-terraform"
@@ -1078,7 +1078,7 @@
     "slug": "aws-cdk-mcp",
     "name": "AWS CDK",
     "org": "aws",
-    "repo": "aws/aws-cdk",
+    "repo": "aws-cdk",
     "description": "Define cloud infrastructure in code. TypeScript-first AWS provisioning.",
     "commands": {
       "claudeCode": "claude mcp add aws-cdk -- npx -y @aws/mcp-server-cdk"
@@ -1096,7 +1096,7 @@
     "slug": "aws-sdk-mcp",
     "name": "AWS SDK",
     "org": "aws",
-    "repo": "aws/aws-sdk-js-v3",
+    "repo": "aws-sdk-js-v3",
     "description": "AWS services SDK for JavaScript. Access any AWS service programmatically.",
     "commands": {
       "claudeCode": "claude mcp add aws-sdk -- npx -y @aws/mcp-server"
@@ -1114,7 +1114,7 @@
     "slug": "cloudflare-workers-mcp",
     "name": "Cloudflare Workers",
     "org": "cloudflare",
-    "repo": "cloudflare/workers-sdk",
+    "repo": "workers-sdk",
     "description": "Serverless compute at the edge. Deploy JavaScript to Cloudflare's global network.",
     "commands": {
       "claudeCode": "claude mcp add cloudflare-workers -- npx -y @cloudflare/mcp-server-workers"
@@ -1132,7 +1132,7 @@
     "slug": "cloudflare-d1-mcp",
     "name": "Cloudflare D1",
     "org": "cloudflare",
-    "repo": "cloudflare/workers-sdk",
+    "repo": "workers-sdk",
     "description": "Serverless SQL database. SQLite at the edge with global replication.",
     "commands": {
       "claudeCode": "claude mcp add cloudflare-d1 -- npx -y @cloudflare/mcp-server-d1"
@@ -1150,7 +1150,7 @@
     "slug": "notion-mcp",
     "name": "Notion",
     "org": "makenotion",
-    "repo": "makenotion/notion-sdk-js",
+    "repo": "notion-sdk-js",
     "description": "Notion API integration. Create, read, and update Notion pages and databases.",
     "commands": {
       "claudeCode": "claude mcp add notion -- npx -y @notionhq/mcp-server"
@@ -1168,7 +1168,7 @@
     "slug": "linear-mcp",
     "name": "Linear",
     "org": "linear",
-    "repo": "linear/linear",
+    "repo": "linear",
     "description": "Linear issue tracking integration. Manage issues, projects, and cycles.",
     "commands": {
       "claudeCode": "claude mcp add linear -- npx -y @linear/mcp-server"
@@ -1186,7 +1186,7 @@
     "slug": "sentry-mcp",
     "name": "Sentry",
     "org": "getsentry",
-    "repo": "getsentry/sentry-javascript",
+    "repo": "sentry-javascript",
     "description": "Error tracking and performance monitoring. Debug issues faster.",
     "commands": {
       "claudeCode": "claude mcp add sentry -- npx -y @sentry/mcp-server"
@@ -1204,7 +1204,7 @@
     "slug": "datadog-mcp",
     "name": "Datadog",
     "org": "DataDog",
-    "repo": "DataDog/dd-trace-js",
+    "repo": "dd-trace-js",
     "description": "Application performance monitoring. Traces, metrics, and logs.",
     "commands": {
       "claudeCode": "claude mcp add datadog -- npx -y @datadog/mcp-server"
@@ -1222,7 +1222,7 @@
     "slug": "posthog-mcp",
     "name": "PostHog",
     "org": "PostHog",
-    "repo": "PostHog/posthog",
+    "repo": "posthog",
     "description": "Product analytics platform. Track user behavior and run experiments.",
     "commands": {
       "claudeCode": "claude mcp add posthog -- npx -y @posthog/mcp-server"
@@ -1240,7 +1240,7 @@
     "slug": "resend-mcp",
     "name": "Resend",
     "org": "resend",
-    "repo": "resend/resend-node",
+    "repo": "resend-node",
     "description": "Email API for developers. Send transactional emails with ease.",
     "commands": {
       "claudeCode": "claude mcp add resend -- npx -y @resend/mcp-server"
@@ -1258,7 +1258,7 @@
     "slug": "twilio-mcp",
     "name": "Twilio",
     "org": "twilio",
-    "repo": "twilio/twilio-node",
+    "repo": "twilio-node",
     "description": "Communication APIs. SMS, voice, video, and authentication.",
     "commands": {
       "claudeCode": "claude mcp add twilio -- npx -y @twilio/mcp-server"
@@ -1276,7 +1276,7 @@
     "slug": "clerk-mcp",
     "name": "Clerk",
     "org": "clerk",
-    "repo": "clerk/javascript",
+    "repo": "javascript",
     "description": "Authentication and user management. Drop-in auth for React and Next.js.",
     "commands": {
       "claudeCode": "claude mcp add clerk -- npx -y @clerk/mcp-server"
@@ -1294,7 +1294,7 @@
     "slug": "auth0-mcp",
     "name": "Auth0",
     "org": "auth0",
-    "repo": "auth0/nextjs-auth0",
+    "repo": "nextjs-auth0",
     "description": "Identity platform for developers. Secure authentication for any app.",
     "commands": {
       "claudeCode": "claude mcp add auth0 -- npx -y @auth0/mcp-server"
@@ -1312,7 +1312,7 @@
     "slug": "convex-mcp",
     "name": "Convex",
     "org": "get-convex",
-    "repo": "get-convex/convex-backend",
+    "repo": "convex-backend",
     "description": "Reactive backend platform. Real-time sync with TypeScript functions.",
     "commands": {
       "claudeCode": "claude mcp add convex -- npx -y @convex-dev/mcp-server"
@@ -1330,7 +1330,7 @@
     "slug": "planetscale-mcp",
     "name": "PlanetScale",
     "org": "planetscale",
-    "repo": "planetscale/database-js",
+    "repo": "database-js",
     "description": "Serverless MySQL platform. Branching, deploy requests, and edge connectivity.",
     "commands": {
       "claudeCode": "claude mcp add planetscale -- npx -y @planetscale/mcp-server"
@@ -1348,7 +1348,7 @@
     "slug": "neon-mcp",
     "name": "Neon",
     "org": "neondatabase",
-    "repo": "neondatabase/neon",
+    "repo": "neon",
     "description": "Serverless Postgres. Branching, autoscaling, and instant provisioning.",
     "commands": {
       "claudeCode": "claude mcp add neon -- npx -y @neondatabase/mcp-server"
@@ -1366,7 +1366,7 @@
     "slug": "upstash-redis-mcp",
     "name": "Upstash Redis",
     "org": "upstash",
-    "repo": "upstash/upstash-redis",
+    "repo": "upstash-redis",
     "description": "Serverless Redis with REST API. Edge-compatible caching and rate limiting.",
     "commands": {
       "claudeCode": "claude mcp add upstash-redis -- npx -y @upstash/mcp-server-redis"
@@ -1384,7 +1384,7 @@
     "slug": "langchain-mcp",
     "name": "LangChain",
     "org": "langchain-ai",
-    "repo": "langchain-ai/langchainjs",
+    "repo": "langchainjs",
     "description": "Build LLM applications. Chains, agents, and retrieval for AI apps.",
     "commands": {
       "claudeCode": "claude mcp add langchain -- npx -y @langchain/mcp-server"
@@ -1403,7 +1403,7 @@
     "slug": "llamaindex-mcp",
     "name": "LlamaIndex",
     "org": "run-llama",
-    "repo": "run-llama/LlamaIndexTS",
+    "repo": "LlamaIndexTS",
     "description": "Data framework for LLM applications. Connect your data to AI models.",
     "commands": {
       "claudeCode": "claude mcp add llamaindex -- npx -y @llamaindex/mcp-server"
@@ -1421,7 +1421,7 @@
     "slug": "pinecone-mcp",
     "name": "Pinecone",
     "org": "pinecone-io",
-    "repo": "pinecone-io/pinecone-ts-client",
+    "repo": "pinecone-ts-client",
     "description": "Vector database for AI. Store and query embeddings at scale.",
     "commands": {
       "claudeCode": "claude mcp add pinecone -- npx -y @pinecone-database/mcp-server"
@@ -1439,7 +1439,7 @@
     "slug": "weaviate-mcp",
     "name": "Weaviate",
     "org": "weaviate",
-    "repo": "weaviate/typescript-client",
+    "repo": "typescript-client",
     "description": "Open source vector database. Semantic search with machine learning.",
     "commands": {
       "claudeCode": "claude mcp add weaviate -- npx -y @weaviate/mcp-server"
@@ -1448,7 +1448,7 @@
     "agents": ["claude-code"],
     "installs": 21800,
     "stars": 12400,
-    "repoUrl": "https://github.com/weaviate/weaviate",
+    "repoUrl": "https://github.com/weaviate/typescript-client",
     "verified": true,
     "lastUpdated": "2025-01-19T00:00:00Z",
     "addedAt": "2024-10-01T00:00:00Z"
@@ -1457,7 +1457,7 @@
     "slug": "chromadb-mcp",
     "name": "Chroma",
     "org": "chroma-core",
-    "repo": "chroma-core/chroma",
+    "repo": "chroma",
     "description": "Open source embedding database. The AI-native way to store embeddings.",
     "commands": {
       "claudeCode": "claude mcp add chromadb -- npx -y @chroma-core/mcp-server"

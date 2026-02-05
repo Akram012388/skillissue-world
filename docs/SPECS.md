@@ -19,7 +19,7 @@
 │                    Next.js App Router                    │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐  │
 │  │  Homepage   │  │ Skill Page  │  │   API Routes    │  │
-│  │   /page.tsx │  │/skill/[id]  │  │  (if needed)    │  │
+│  │   /page.tsx │  │/skill/[slug]│  │  (if needed)    │  │
 │  └─────────────┘  └─────────────┘  └─────────────────┘  │
 └─────────────────────────────────────────────────────────┘
                             │
@@ -50,10 +50,10 @@
 ```typescript
 interface Skill {
   // Identifiers
-  id: string;                      // Unique slug: "{org}-{repo}"
+  slug: string;                    // Unique per-skill slug
   name: string;                    // Display name
   org: string;                     // GitHub organization
-  repo: string;                    // Repository name
+  repo: string;                    // Repository name (no org prefix)
 
   // Content
   description: string;             // 1-3 sentences, curated
@@ -121,7 +121,7 @@ type CategoryTag =
 
 ```json
 {
-  "id": "vercel-labs-react-best-practices",
+  "slug": "vercel-react-best-practices",
   "name": "React Best Practices",
   "org": "vercel-labs",
   "repo": "react-best-practices",
@@ -152,9 +152,9 @@ skillissue.world/
 ├── app/
 │   ├── layout.tsx              # Root layout
 │   ├── page.tsx                # Homepage
-│   ├── skill/
-│   │   └── [id]/
-│   │       └── page.tsx        # Skill detail page
+  │   ├── skill/
+  │   │   └── [slug]/
+  │   │       └── page.tsx        # Skill detail page (canonical)
 │   ├── category/
 │   │   └── [tag]/
 │   │       └── page.tsx        # Category listing

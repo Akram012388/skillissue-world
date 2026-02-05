@@ -92,7 +92,7 @@ test.describe('Copy functionality', () => {
       await copyButton.click();
 
       // Button should have green/success styling
-      await expect(copyButton).toHaveClass(/bg-green-100|text-green-700/);
+      await expect(copyButton).toHaveClass(/bg-success-100|text-success-700/);
     });
   });
 
@@ -148,7 +148,7 @@ test.describe('Copy functionality', () => {
 
       // Toast should have green/success styling
       const toast = page.locator('[data-testid="toast"]');
-      await expect(toast).toHaveClass(/bg-green-500/);
+      await expect(toast).toHaveClass(/bg-success-500/);
     });
 
     test('toast disappears after timeout', async ({ page, context }) => {

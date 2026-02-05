@@ -15,6 +15,7 @@
 import { ConvexHttpClient } from 'convex/browser';
 import { api } from '../convex/_generated/api';
 import skillsData from '../data/skills.json';
+import { normalizeSkillData } from './skill-utils';
 
 // Types for skill data
 interface SkillData {
@@ -64,7 +65,8 @@ async function seedSkills(): Promise<void> {
 
   for (const skill of skillsData as SkillData[]) {
     try {
-      const result = await client.mutation(api.skills.insertSkill, skill);
+      const normalizedSkill = normalizeSkillData(skill);
+      const result = await client.mutation(api.skills.insertSkill, normalizedSkill);
 
       if (result.status === 'inserted') {
         console.log(`✓ Inserted: ${skill.name} (${skill.slug})`);

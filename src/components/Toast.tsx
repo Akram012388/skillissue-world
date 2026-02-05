@@ -12,9 +12,9 @@ interface ToastProps {
 }
 
 const typeStyles: Record<ToastType, string> = {
-  success: 'bg-green-500 text-white',
-  error: 'bg-red-500 text-white',
-  info: 'bg-blue-500 text-white',
+  success: 'bg-success-500 text-white',
+  error: 'bg-error-500 text-white',
+  info: 'bg-primary-600 text-white',
 };
 
 export function Toast({ message, type, duration = 2000, onClose }: ToastProps) {

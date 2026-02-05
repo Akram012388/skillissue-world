@@ -29,8 +29,19 @@ export function useSkillByPath(org: string, repo: string, slug: string) {
 /**
  * Hook to search skills by query
  */
-export function useSearchSkills(query: string) {
-  return useQuery(api.skills.search, { query });
+export function useSearchSkills(query: string, tag?: string | null) {
+  const normalizedQuery = query.trim();
+  const normalizedTag = tag?.trim();
+  const shouldSkip = normalizedQuery.length === 0 && !normalizedTag;
+  return useQuery(
+    api.skills.search,
+    shouldSkip
+      ? 'skip'
+      : {
+          query: normalizedQuery,
+          tag: normalizedTag ?? undefined,
+        },
+  );
 }
 
 /**
@@ -47,6 +58,13 @@ export function useHitPicks(limit?: number) {
  */
 export function useLatestDrops(limit?: number) {
   return useQuery(api.skills.latestDrops, { limit });
+}
+
+/**
+ * Hook to fetch hot skills based on recency-weighted installs
+ */
+export function useHotSpots(limit?: number) {
+  return useQuery(api.skills.leaderboardHot, { limit });
 }
 
 /**

@@ -10,7 +10,7 @@ interface AgentToggleProps {
 
 export function AgentToggle({ skill, selectedAgent, onSelect }: AgentToggleProps) {
   // Get supported agents and sort by AGENT_DISPLAY order
-  const supportedAgents = skill.agents.sort(
+  const supportedAgents = [...skill.agents].sort(
     (a, b) => AGENT_DISPLAY[a].order - AGENT_DISPLAY[b].order,
   );
 
@@ -33,10 +33,10 @@ export function AgentToggle({ skill, selectedAgent, onSelect }: AgentToggleProps
           <label
             key={agent}
             htmlFor={inputId}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border ${
               isSelected
-                ? 'bg-blue-600 text-white shadow-md hover:bg-blue-700'
-                : 'bg-zinc-200 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-300 dark:hover:bg-zinc-600'
+                ? 'bg-foreground text-background border-foreground'
+                : 'bg-background-subtle text-foreground border-border hover:border-border-strong'
             }`}
           >
             <input

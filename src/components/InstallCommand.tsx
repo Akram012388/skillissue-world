@@ -25,7 +25,7 @@ export function InstallCommand({
 }: InstallCommandProps): ReactNode {
   return (
     <div
-      className={`flex items-center gap-3 bg-background-subtle/80 rounded-md px-4 py-3 font-mono text-sm ${className}`}
+      className={`flex items-center gap-3 bg-background-subtle/80 border border-border rounded-md px-4 py-3 font-mono text-sm ${className}`}
     >
       <span className="text-foreground-muted select-none" aria-hidden="true">
         $
